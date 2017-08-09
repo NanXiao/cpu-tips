@@ -36,7 +36,7 @@ Compile and use `gdb` to check the endianness of the CPU:
 
 (2) Byte-alignment
 
-Some CPUs require strict byte-alignment(mostly many `RISC`, e.g., `SPARC`) while some not(E.g., `X86`).  Take the following program as a demonstration:  
+Some CPUs require strict byte-alignment(Mostly many `RISC` architectures, e.g., `SPARC`) while some not(E.g., `X86`).  Take the following program as a demonstration:  
 
 	#include <stdlib.h>
 
@@ -67,7 +67,7 @@ The address of `0x0A0B0C0D` is not `byte-alignment`, i.e., the multiples of `siz
 
 (3) Stack growth.
 
-Most CPUs' stack growth is from higher address to lower address. Take `X86_64` architecture as an example (image is from [here](http://www.eecg.toronto.edu/~ashvin/courses/ece344/current/stack.png)):  
+Most CPUs' stack growth is from higher address to lower. Take `X86_64` architecture as an example (image is from [here](http://www.eecg.toronto.edu/~ashvin/courses/ece344/current/stack.png)):  
 ![image](http://www.eecg.toronto.edu/~ashvin/courses/ece344/current/stack.png)  
 
 Take following program as an demonstration:  
@@ -92,5 +92,6 @@ Take following program as an demonstration:
 	}
 
 Use `gdb` to check the calling stack:  
+![image](https://github.com/NanXiao/cpu-tips/blob/master/image/call-stack.jpg)
 
 `0x7fffffffea68` is `a`'s address; `0x7fffffffea70` is the caller function's "stack frame", and `0x7fffffffea78` is the return address.
