@@ -94,4 +94,4 @@ Take following program as an demonstration:
 Use `gdb` to check the calling stack:  
 ![image](https://github.com/NanXiao/cpu-tips/blob/master/image/call-stack.jpg)
 
-`0x7fffffffea68` is `a`'s address; `0x7fffffffea70` is the caller function's "stack frame", and `0x7fffffffea78` is the return address.
+`0x7fffffffea68` is `a`'s address; `0x7fffffffea70` stores the caller function(`func2`)'s "stack frame address", and `0x7fffffffea78` stores the return address of the current function(`fun1`).
