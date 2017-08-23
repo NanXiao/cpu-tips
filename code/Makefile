@@ -1,8 +1,11 @@
 CC=gcc
 CFLAGS=-g -o
-all:
-	$(CC) $(CFLAGS) endian endian.c
-	$(CC) $(CFLAGS) byte-alignment byte-alignment.c
-	$(CC) $(CFLAGS) stack stack.c
+
+%: %.c
+	$(CC) $(CFLAGS) $@ $< 
+
+all: endian byte-alignment stack
+
 clean:
 	rm endian byte-alignment stack
+.PHONY: all clean
